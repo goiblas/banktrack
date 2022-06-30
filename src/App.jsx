@@ -1,13 +1,14 @@
 import GlobalSyles from "./components/GlobalStyles"
+import Page from "./components/Page"
 
 const App = () => {
   return (
     <>
     <GlobalSyles />
 
-    <div>
+    <Page>
       <h1>Hello banktrack!</h1>
-    </div>
+    </Page>
     </>
   )
 }

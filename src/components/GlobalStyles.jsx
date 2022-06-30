@@ -10,6 +10,7 @@ const GlobalSyles = () => (
         body {
             font-family: "DM Sans", sans-serif;
             line-height: 1.2;
+            background-color: #FDFAF5;
         }
         a {
             color: "currentColor";
