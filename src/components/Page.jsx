@@ -4,9 +4,13 @@ import styled from "@emotion/styled";
 const FullPage = styled.div`
     min-height: 100vh;
     padding: 0 1.5rem;
-    display: grid;
-    place-content: center;
+    display: flex;
     background-color: #FDFAF5;
+`
+
+const Content = styled.div`
+    margin: auto;
+    flex: 1 1 auto;
 `
 
 const Header = styled.header`
@@ -29,11 +33,13 @@ const Logo = styled.img`
 const Page = ({ children }) => {
     return (
         <FullPage>
-            <Header>
-                <Logo src={logoSrc} width="256" height="256" alt="banktrack logo" />
-            </Header>
+            <Content>
+                <Header>
+                    <Logo src={logoSrc} width="256" height="256" alt="banktrack logo" />
+                </Header>
 
-            <Main>{children}</Main>
+                <Main>{children}</Main>
+            </Content>
         </FullPage>
     );
 }
