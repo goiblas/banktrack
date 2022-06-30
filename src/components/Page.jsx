@@ -20,7 +20,7 @@ const Header = styled.header`
 const Main = styled.main`
     width: min(31.25rem, 100%);
     margin: auto;
-    padding-bottom: 8rem;
+    padding-bottom: calc(2rem + 10vw);
 `
 
 const Logo = styled.img`
