@@ -1,7 +1,7 @@
 import { useState } from "react"
 import TextField from "./TextField"
 import styled from "@emotion/styled"
-import tooglePasswordIconSrc from "../assets/icon-view.svg"
+import EyeIcon from "../icons/Eye"
 
 const Wrapper = styled.div`
     position: relative;
@@ -25,23 +25,35 @@ const IconButton = styled.button`
 `
 
 const PasswordField = props => {
-    const [type, setType] = useState("password");
+    const [type, setType] = useState("password")
+    const [hasFocus, setHasFocus] = useState(false)
+    const { onFocus, onBlur, ...textFieldProps } = props
 
     const handleClick = () => {
-        setType(type === "password" ? "text" : "password");
+        setType(type === "password" ? "text" : "password")
+    }
+
+    const focusHandler = () => {
+        setHasFocus(true)
+        onFocus?.()
+    }
+
+    const blurHandler = () => {
+        setHasFocus(false)
+        onBlur?.()
     }
 
     return (
         <Wrapper>
-            <TextFieldStyled type={type} {...props} />
-            
-            <IconButton type="button" onClick={handleClick}>
-                <img 
-                    src={tooglePasswordIconSrc}
-                    alt={type === "password" ? "ver contraseña" : "ocultar contraseña"}
-                    width="24"
-                    height="18"
+            <TextFieldStyled 
+                onFocus={focusHandler}
+                onBlur={blurHandler}
+                type={type}
+                {...textFieldProps}
                 />
+
+            <IconButton aria-label={type === "password" ? "ver contraseña" : "ocultar contraseña"} type="button" onClick={handleClick}>
+                <EyeIcon color={hasFocus ? "#4021C8" : "#929292" } />
             </IconButton>
         </Wrapper>
     )

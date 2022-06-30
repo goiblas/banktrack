@@ -7,7 +7,7 @@ const InputBase = styled.input`
     height: 3.75rem;
     padding: 0 1rem;
     width: 100%;
-    color: #4021C8;
+    color: #222222;
     font-family: "DM Sans", sans-serif;
     font-size: 1rem;
     font-weight: 500;
@@ -23,13 +23,14 @@ const InputBase = styled.input`
     }
     &:focus {
         border-color: #4021C8;
+        color: #4021C8;
         box-shadow: 0 0 5px rgba(64, 33, 200, 0.25);
     }
-`;
+`
 
 const Wrapper = styled.div`
     position: relative;
-`;
+`
 
 const Label = styled.label`
     position: absolute;
@@ -44,7 +45,7 @@ const Label = styled.label`
     transform: translateY(-50%);
     transition: color .5s;
     letter-spacing: 0;
-`;
+`
 
 const Help = styled.div`
     text-align: center;
@@ -55,17 +56,17 @@ const Help = styled.div`
 `
 
 const TextField = props => {
-    const { value, id = useId(), type = "text", label, textHelp, onFocus, onBlur, ...rest } = props;
-    const [hasFocus, setHasFocus] = useState(false);
+    const { value, id = useId(), type = "text", label, textHelp, onFocus, onBlur, ...rest } = props
+    const [hasFocus, setHasFocus] = useState(false)
 
     const focusHandler = () => {
-        setHasFocus(true);
-        onFocus?.();
+        setHasFocus(true)
+        onFocus?.()
     }
 
     const blurHandler = () => {
-        setHasFocus(false);
-        onBlur?.();
+        setHasFocus(false)
+        onBlur?.()
     }
 
     return (
