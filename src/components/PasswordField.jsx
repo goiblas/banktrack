@@ -7,20 +7,16 @@ const Wrapper = styled.div`
     position: relative;
 `
 
-const TextFieldStyled = styled(TextField)`
-    padding-inline-end: 56px; // rtl ready https://developer.mozilla.org/es/docs/Web/CSS/padding-inline-end
-`
-
 const IconButton = styled.button`
     position: absolute;
-    inset-block-start: 12px; // rtl ready https://developer.mozilla.org/es/docs/Web/CSS/inset-block-start
-    inset-inline-end: 12px; 
-    display: "flex";
-    align-items: "center";
-    justify-content: "center";
+    inset-block-start: 11px; 
+    inset-inline-end: 12px; // rtl ready https://developer.mozilla.org/es/docs/Web/CSS/inset-block-start
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width:40px;
     height:40px;
-    background-color: transparent;
+    background-color: #fff;
     border: none;
 `
 
@@ -45,7 +41,7 @@ const PasswordField = props => {
 
     return (
         <Wrapper>
-            <TextFieldStyled 
+            <TextField 
                 onFocus={focusHandler}
                 onBlur={blurHandler}
                 type={type}
