@@ -3,7 +3,7 @@ import styled from "@emotion/styled";
 
 const FullPage = styled.div`
     min-height: 100vh;
-    padding: 0 2rem;
+    padding: 0 1.5rem;
     display: grid;
     place-content: center;
     background-color: #FDFAF5;
@@ -14,8 +14,7 @@ const Header = styled.header`
 `
 
 const Main = styled.main`
-    width: 100%;
-    max-width: 500px;
+    width: min(31.25rem, 100%);
     margin: auto;
     padding-bottom: 8rem;
 `
