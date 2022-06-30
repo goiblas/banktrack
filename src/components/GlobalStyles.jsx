@@ -13,7 +13,7 @@ const GlobalSyles = () => (
             background-color: #FDFAF5;
         }
         a {
-            color: "currentColor";
+            color: currentColor;
             font-weight: 500;
             text-underline-offset: 0.1em;
         }
