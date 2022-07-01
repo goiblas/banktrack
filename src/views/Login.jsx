@@ -8,23 +8,13 @@ import afterbacksLogo from "../assets/icon-ab.png"
 import sabadellLogo from "../assets/logo_sabadell.png"
 import iconLockSrc from "../assets/icon-lock.svg"
 import Features from "../components/Feautures"
+import Title from "../components/Title"
 
 const Description = styled.p`
     font-size: 0.875rem;
     line-height: 1.2;
     font-weight: 500;
     color: #646464;
-`
-
-const Title = styled.h1`
-    font-size: 2rem;
-    line-height: 1.2;
-    font-weight: bold;
-    color: #222222;
-    margin-bottom: .5rem;
-    display: flex;
-    gap: 1rem;
-    align-items: center;
 `
 
 const Header = styled.div`
