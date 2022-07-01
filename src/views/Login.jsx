@@ -9,6 +9,7 @@ import sabadellLogo from "../assets/logo_sabadell.png"
 import iconLockSrc from "../assets/icon-lock.svg"
 import Features from "../components/Feautures"
 import Title from "../components/Title"
+import LockIcon from "../icons/Lock"
 
 const Description = styled.p`
     font-weight: ${({theme}) => theme.typography.weight.medium};
@@ -95,6 +96,7 @@ const Login = ({ onLogin, isLoading }) => {
 
               <Center>
                 <Button type="submit" disabled={isLoading}>
+                  <LockIcon color="currentColor" />
                   Conectar
                 </Button>
               </Center>
