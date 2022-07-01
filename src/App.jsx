@@ -124,11 +124,11 @@ const App = () => {
               </Features.Item>
 
               <Features.Item image={iconLockSrc}>
-                  Conexión via <a href="#" rel="noopener noreferrer" target="_blank">afterbanks</a>: API segura <strong>utilzado por ciento de miles de personas</strong> para aconectar con sus entidades financieras.
+                <strong>Solo tenemos acceso a tus movimientos</strong>, con este acesso no se puede hacer transferencias ni modificar nada.
               </Features.Item>
 
               <Features.Item image={iconLockSrc}>
-                  Conexión via <a href="#" rel="noopener noreferrer" target="_blank">afterbanks</a>: API segura <strong>utilzado por ciento de miles de personas</strong> para aconectar con sus entidades financieras.
+                 <strong>No guardamos tu contraseña.</strong> Solo se utiliza para crear la conexión.
               </Features.Item>
             </Features>
           </FeaturesCard>
