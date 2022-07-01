@@ -11,10 +11,10 @@ import Features from "../components/Feautures"
 import Title from "../components/Title"
 
 const Description = styled.p`
-    font-size: 0.875rem;
-    line-height: 1.2;
-    font-weight: 500;
-    color: #646464;
+    font-weight: ${({theme}) => theme.typography.weight.medium};
+    font-size: ${({theme}) => theme.typography.size.label};
+    line-height: ${({theme}) => theme.typography.lineHeight.small};
+    color: ${({theme}) => theme.colors.neutrals[700]};
 `
 
 const Header = styled.div`
@@ -35,8 +35,8 @@ const SecureText = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.875rem;
-    color: #646464;
+    font-size: ${({theme}) => theme.typography.size.label};
+    color: ${({theme}) => theme.colors.neutrals[700]};
     gap: .5rem;
     margin-bottom: .25rem;
 

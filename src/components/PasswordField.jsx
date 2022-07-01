@@ -1,6 +1,7 @@
 import { useState } from "react"
-import TextField from "./TextField"
+import { useTheme } from "@emotion/react"
 import styled from "@emotion/styled"
+import TextField from "./TextField"
 import EyeIcon from "../icons/Eye"
 
 const Wrapper = styled.div`
@@ -16,13 +17,14 @@ const IconButton = styled.button`
     justify-content: center;
     width:40px;
     height:40px;
-    background-color: #fff;
+    background-color: ${({theme}) => theme.colors.white};
     border: none;
 `
 
 const PasswordField = props => {
     const [type, setType] = useState("password")
     const [hasFocus, setHasFocus] = useState(false)
+    const theme = useTheme()
     const { onFocus, onBlur, ...textFieldProps } = props
 
     const handleClick = () => {
@@ -49,7 +51,7 @@ const PasswordField = props => {
                 />
 
             <IconButton aria-label={type === "password" ? "ver contraseña" : "ocultar contraseña"} type="button" onClick={handleClick}>
-                <EyeIcon color={hasFocus ? "#4021C8" : "#929292" } />
+                <EyeIcon color={hasFocus ?  theme.colors.primary : theme.colors.neutrals[500] } />
             </IconButton>
         </Wrapper>
     )

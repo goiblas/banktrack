@@ -1,10 +1,10 @@
 import styled from "@emotion/styled"
 
 const Title = styled.h1`
-    font-size: 2rem;
-    line-height: 1.2;
-    font-weight: bold;
-    color: #222222;
+    color: ${({theme}) => theme.colors.neutrals[900]};
+    font-size: ${({theme}) => theme.typography.size.title};
+    font-weight: ${({theme}) => theme.typography.weight.bold};
+    line-height: ${({theme}) => theme.typography.lineHeight.small};
     margin-bottom: .5rem;
     display: flex;
     gap: 1rem;

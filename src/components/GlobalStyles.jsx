@@ -1,20 +1,22 @@
-import { Global, css } from '@emotion/react'
+import { Global, css, useTheme } from '@emotion/react'
 
-const GlobalSyles = () => (
-    <Global styles={css`
+const GlobalSyles = () => {
+    const theme = useTheme()
+
+    return <Global styles={css`
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
         }
         body {
-            font-family: "DM Sans", sans-serif;
-            line-height: 1.2;
-            background-color: #FDFAF5;
+            font-family: ${theme.typography.family};
+            background-color: ${theme.colors.backgrounds.app};
+            line-height: ${theme.typography.lineHeight.small};
         }
         a {
             color: currentColor;
-            font-weight: 500;
+            font-weight: ${theme.typography.weight.medium};
             text-underline-offset: 0.1em;
         }
         input,
@@ -27,6 +29,6 @@ const GlobalSyles = () => (
             cursor: pointer;
         }
     `} />
-)
+}
 
 export default GlobalSyles

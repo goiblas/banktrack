@@ -5,17 +5,16 @@ const Button = styled.button`
     align-items: center;
     justify-content: center;
     gap: .75rem;
-    border-radius: 99999rem;
-    height: 3.75rem;
+    border-radius: ${({theme}) => theme.radius.full};
+    height: ${({theme}) => theme.formControls.height};
     border: none;
-    background-image: linear-gradient(to right, #2E16BA, #5A31DE);
+    background-image:${({theme}) => `linear-gradient(to right, ${theme.colors.gradients.primary.join(',')})`};
     padding-inline-start: 1.5rem;
     padding-inline-end: 1.5rem;
     min-width: 12rem;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1.1875rem;
-    color: #ffffff;
-    font-weight: 700;
+    font-size: ${({theme}) => theme.typography.size.large};
+    color: ${({theme}) => theme.colors.white};
+    font-weight: ${({theme}) => theme.typography.weight.bold};
     text-decoration: none;
 `;
 

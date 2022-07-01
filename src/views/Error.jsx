@@ -19,9 +19,9 @@ const Center = styled.div`
 `
 
 const Paragraph = styled.p`
-    color: #636363;
-    font-size: 1rem;
-    line-height: 1.3125;
+    color: ${({theme}) => theme.colors.neutrals[700]};
+    font-size: ${({theme}) => theme.typography.size.medium};
+    line-height: ${({theme}) => theme.typography.lineHeight.medium};
     margin-bottom: 1.75rem;
 `
 

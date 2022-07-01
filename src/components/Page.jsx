@@ -5,7 +5,7 @@ const FullPage = styled.div`
     min-height: 100vh;
     padding: 0 1.5rem;
     display: flex;
-    background-color: #FDFAF5;
+    background-color: ${({theme}) =>theme.colors.backgrounds.app};
 `
 
 const Content = styled.div`

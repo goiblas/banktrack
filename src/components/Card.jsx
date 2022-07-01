@@ -3,11 +3,10 @@ import styled from "@emotion/styled"
 const WrapperCard = styled.div`
     width: 100%;
     padding: 32px;
-    background-color: #fff;
-    border-radius: 20px;
+    background-color: ${({theme}) => theme.colors.backgrounds.card};
+    border-radius: ${({theme}) => theme.radius.medium};
     margin-bottom: 2rem;
-    box-shadow: 0 3px 5px rgba(0,0,0, 0.05),
-                0 12px 24px rgba(0,0,0,0.1);
+    box-shadow: ${({theme}) => theme.shadows.medium};
 `
 
 const Content = styled.div`

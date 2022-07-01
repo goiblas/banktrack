@@ -4,6 +4,8 @@ import Page from "./components/Page"
 import Login from "./views/Login"
 import Error from "./views/Error"
 import { login } from "./services/auth"
+import { ThemeProvider } from "@emotion/react"
+import theme from "./theme"
 
 const ERROR_TYPES = {
   invalid_login: "Usuario o contraseña incorrectos",
@@ -34,7 +36,7 @@ const App = () => {
   }
   
   return (
-    <>
+    <ThemeProvider theme={theme}>
       <GlobalSyles />
 
       <Page>
@@ -44,7 +46,7 @@ const App = () => {
           <Login onLogin={handleLogin} isLoading={isLoading} />
         )}
       </Page>
-    </>
+    </ThemeProvider>
   )
 }
 

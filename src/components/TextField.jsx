@@ -1,19 +1,19 @@
-import { useId, useState } from "react";
-import styled from "@emotion/styled";
+import { useId, useState } from "react"
+import styled from "@emotion/styled"
+import alpha from 'color-alpha'
 
 const InputBase = styled.input`
-    border: 2px solid #D4D4D4;
-    border-radius: 8px;
-    height: 3.75rem;
+    border: ${({theme}) => `2px solid ${theme.colors.neutrals[300]}`};
+    border-radius: ${({theme}) => theme.radius.small};
+    height: ${({theme}) => theme.formControls.height};
     padding: 0 1rem;
     width: 100%;
-    color: #222222;
-    font-family: "DM Sans", sans-serif;
-    font-size: 1rem;
-    font-weight: 500;
+    color: ${({theme}) => theme.colors.neutrals[900]};
+    font-size: ${({theme}) => theme.typography.size.medium};
+    font-weight: ${({theme}) => theme.typography.weight.medium};
     transition-property: border-color, box-shadow;
     transition-duration: .5s;
-    box-shadow: 0 0 0 rgba(64, 33, 200, 0);
+    box-shadow: ${({theme}) => `0 0 0 ${alpha(theme.colors.primary, 0)}`};
 
     &:not(:focus)&::placeholder {
         text-align: center;
@@ -22,9 +22,9 @@ const InputBase = styled.input`
         outline: none;
     }
     &:focus {
-        border-color: #4021C8;
-        color: #4021C8;
-        box-shadow: 0 0 5px rgba(64, 33, 200, 0.25);
+        border-color: ${({theme}) => theme.colors.primary};
+        color: ${({theme}) => theme.colors.primary};
+        box-shadow: ${({theme}) => `0 0 5px ${alpha(theme.colors.primary, 0.5)}`};
     }
 `
 
@@ -36,12 +36,11 @@ const Label = styled.label`
     position: absolute;
     inset-inline-start: .75rem; // rtl ready
     top: 0;
-    background-color: #ffffff;
+    background-color: ${({theme}) => theme.colors.white};
     padding: 0 .35rem;
-    font-family: "DM Sans", sans-serif;
-    color: ${({hasFocus}) => hasFocus ? "#4021C8" : "#929292"} ;
-    font-size: 0.875rem;
-    font-weight: 700;
+    color: ${({theme, hasFocus}) => hasFocus ? theme.colors.primary : theme.colors.neutrals[500]} ;
+    font-size:${({theme}) => theme.typography.size.label};
+    font-weight: ${({theme}) => theme.typography.weight.bold};
     transform: translateY(-50%);
     transition: color .5s;
     letter-spacing: 0;
@@ -49,9 +48,9 @@ const Label = styled.label`
 
 const Help = styled.div`
     text-align: center;
-    font-size: 0.75rem;
-    color: #929292;
-    line-height: 1.4;
+    font-size: ${({theme}) => theme.typography.size.extraSmall};
+    color: ${({theme}) => theme.colors.neutrals[500]};
+    line-height: ${({theme}) => theme.typography.lineHeight.large};
     padding: 0.25rem 0;
 `
 

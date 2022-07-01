@@ -4,9 +4,9 @@ const Row = styled.li`
     display: flex;
     align-items: flex-start;
     gap: 1rem;
-    color: #222222;
-    font-size: 0.8125rem;
-    line-height: 1.3;
+    color: ${({theme}) => theme.colors.neutrals[900]};
+    font-size: ${({theme}) => theme.typography.size.small};
+    line-height: ${({theme}) => theme.typography.lineHeight.medium};
 `
 
 const Features = styled.ul`
