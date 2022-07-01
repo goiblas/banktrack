@@ -10,6 +10,7 @@ import iconLockSrc from "../assets/icon-lock.svg"
 import Features from "../components/Feautures"
 import Title from "../components/Title"
 import LockIcon from "../icons/Lock"
+import { isValidUsername, isValidPassword } from "../utils/validations"
 
 const Description = styled.p`
     font-weight: ${({theme}) => theme.typography.weight.medium};
@@ -42,7 +43,7 @@ const SecureText = styled.div`
     margin-bottom: .25rem;
 
     a {
-        font-weight: 500;
+      font-weight: ${({theme}) => theme.typography.weight.medium};
     }
 `
 
@@ -65,7 +66,9 @@ const Login = ({ onLogin, isLoading }) => {
   
   const handleSubmit = ev => {
     ev.preventDefault()
-    onLogin({ username, password })
+    if(isValidUsername(username) && isValidPassword(password)) {
+      onLogin({ username, password })
+    }
   }
 
   return (
