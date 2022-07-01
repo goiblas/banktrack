@@ -32,7 +32,7 @@ const Image = styled.img`
     height: auto;
 `
 
-const Error = ({ onGoBack }) => {
+const Error = ({ onGoBack, errorMessage }) => {
     const handleClick = ev => {
         ev.preventDefault()
         onGoBack()
@@ -47,7 +47,8 @@ const Error = ({ onGoBack }) => {
                     La conexión con el banco ha fallado.
                 </Paragraph>
                 <Paragraph>
-                    Se ha enviado un aviso a nuestro equipo técnico. Resolveremos el problema lo antes posible.                </Paragraph>
+                    {errorMessage}
+                </Paragraph>
                 <ButtonStyled as="a" href="#" onClick={handleClick}>
                     Volver
                 </ButtonStyled>

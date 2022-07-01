@@ -58,10 +58,14 @@ const FeaturesCard = styled(Card)`
     }
 `
 
-
-const Login = () => {
-  const [identifier, setIdentifier] = useState("")
+const Login = ({ onLogin, isLoading }) => {
+  const [username, setUsername] = useState("")
   const [password, setPassword] = useState("")
+  
+  const handleSubmit = ev => {
+    ev.preventDefault()
+    onLogin({ username, password })
+  }
 
   return (
         <Relative>
@@ -73,11 +77,12 @@ const Login = () => {
                 </Title>
               <Description>Escribe tu identificador y contraseña de Banco Sabadell para conectar con el banco</Description>
             </Header>
-            <Form>
+
+            <Form onSubmit={handleSubmit}>
               <TextField
-                value={identifier}
-                onChange={(ev) => setIdentifier(ev.target.value)}
-                name="identifier"
+                value={username}
+                onChange={(ev) => setUsername(ev.target.value)}
+                name="username"
                 textHelp="Identificador que pones en el web o app de Banco Sabadell"
                 label="Identificador" />
 
@@ -89,7 +94,7 @@ const Login = () => {
                 label="Contraseña" />
 
               <Center>
-                <Button type="submit">
+                <Button type="submit" disabled={isLoading}>
                   Conectar
                 </Button>
               </Center>
