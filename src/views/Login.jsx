@@ -84,6 +84,7 @@ const Login = ({ onLogin, isLoading }) => {
 
             <Form onSubmit={handleSubmit}>
               <TextField
+                type="email"
                 value={username}
                 onChange={(ev) => setUsername(ev.target.value)}
                 name="username"
