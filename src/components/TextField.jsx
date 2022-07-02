@@ -1,6 +1,7 @@
 import { useId, useState } from "react"
 import styled from "@emotion/styled"
 import alpha from 'color-alpha'
+import VisibilityHidden from "./VisibilityHidden"
 
 const InputBase = styled.input`
     border: ${({theme}) => `2px solid ${theme.colors.neutrals[300]}`};
@@ -70,7 +71,10 @@ const TextField = props => {
 
     return (
         <Wrapper>
-            {value && <Label hasFocus={hasFocus} htmlFor={id}>{label}</Label>}
+            <VisibilityHidden when={!value}>
+                <Label hasFocus={hasFocus} htmlFor={id}>{label}</Label>
+            </VisibilityHidden>
+
             <InputBase 
                 id={id}
                 placeholder={label}
